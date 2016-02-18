@@ -26,7 +26,7 @@ class PostDetailView extends Component {
   render() {
     return (
       <div>
-        <Header onClick={function noop() {}} handleLogoClick={this.handleLogoClick}/>
+        <Header onClick={Function.prototype} handleLogoClick={this.handleLogoClick}/>
         <div className="container">
           <div className="single-post post-detail">
             <h3 className="post-title">{this.props.post.title}</h3>

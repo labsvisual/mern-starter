@@ -22,25 +22,25 @@ describe('component tests', () => {
       cuid: 'cikpdcdn60000zjxom3dmavzq',
     };
     renderer.render(<PostListItem post={post}
-      onClick={function click() {}} onDelete={function noop() {}}
+      onClick={function click() {}} onDelete={Function.prototype}
     />);
     const output = renderer.getRenderOutput();
     expect(output).toEqualJSX(<div className="single-post">
             <h3 className="post-title ">
-              <Link to={'/post/' + post.slug + '-' + post.cuid} onClick={function noop() {}}>
+              <Link to={'/post/' + post.slug + '-' + post.cuid} onClick={Function.prototype}>
                 {post.title}
               </Link>
             </h3>
           <p className="author-name">By {post.name}</p>
           <p className="post-desc">{post.content}</p>
-          <p className="post-action"><a href="#" onClick={function noop() {}}>Delete Post</a></p>
+          <p className="post-action"><a href="#" onClick={Function.prototype}>Delete Post</a></p>
           <hr className="divider"/>
          </div>);
   });
 
   it('should render PostCreateView properly', () => {
     const renderer = TestUtils.createRenderer();
-    renderer.render(<PostCreateView showAddPost={false} addPost={function noop() {}}/>);
+    renderer.render(<PostCreateView showAddPost={false} addPost={Function.prototype}/>);
     const output = renderer.getRenderOutput();
     expect(output).toEqualJSX(<div className="form ">
         <div className="form-content">
@@ -48,14 +48,14 @@ describe('component tests', () => {
           <input placeholder="Author's Name" className="form-field" ref="name"/>
           <input placeholder="Post Title" className="form-field" ref="title"/>
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-      <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
+      <a className="post-submit-button align-right" href="#" onClick={Function.prototype}>Submit</a>
             </div>
           </div>);
   });
 
   it('should show post creame form in  PostCreateView if showAddPost is true', () => {
     const renderer = TestUtils.createRenderer();
-    renderer.render(<PostCreateView showAddPost={true} addPost={function noop() {}}/>);
+    renderer.render(<PostCreateView showAddPost={true} addPost={Function.prototype}/>);
     const output = renderer.getRenderOutput();
     expect(output).toEqualJSX(<div className="form appear">
         <div className="form-content">
@@ -63,7 +63,7 @@ describe('component tests', () => {
           <input placeholder="Author's Name" className="form-field" ref="name"/>
           <input placeholder="Post Title" className="form-field" ref="title"/>
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-      <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
+      <a className="post-submit-button align-right" href="#" onClick={Function.prototype}>Submit</a>
             </div>
           </div>);
   });
